@@ -1,0 +1,43 @@
+<nav class="nav-bar-2">
+  <ul>
+    <li>
+      <div class="dropdown">
+        <a class="dropbtn" style="cursor: pointer">Filter</a>
+        <div class="dropdown-content">
+          <a>Link 1</a>
+          <a>Link 2</a>
+          <a>Link 3</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <a>T-shirt</a>
+    </li>
+  </ul>
+</nav>
+<p>women works!</p>
+
+<div class="container">
+  <div class="col" *ngFor="let data of rowData3; let i = index">
+    <div class="item1" [routerLink]="['/detail/' + data.id]">
+      
+      <!-- <div [routerLink]="['detail/' + data.name.common]"> -->
+        <!-- image--> 
+        <img style="height: 200px; border-radius: 10px;" src="{{ data.image }}" alt="..." />
+        <!-- details-->
+        <div style="padding: 5px;">
+          <h5>{{ data.title }}</h5>
+          <p>{{ data.price }}</p>
+        </div>
+        <!-- <Button class="btn" routerLink="/cart">ADD TO CART</Button> -->
+      <!-- </div> -->
+
+    </div>
+  </div>
+</div>
+
+<p>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error quis nisi,
+  odit ipsam in rem! A, perspiciatis. Iure labore sint suscipit laboriosam
+  explicabo ullam, quasi corporis iusto maxime exercitationem?
+</p>

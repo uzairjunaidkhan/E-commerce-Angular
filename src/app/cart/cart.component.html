@@ -1,0 +1,47 @@
+<p>cart works!</p>
+<div class="container">
+  <div class="item1">
+    <div class="col1" *ngFor="let data of rowData3; let i = index">
+      <!-- <div [routerLink]="['detail/' + data.name.common]"> -->
+      <!-- image-->
+      <img
+        style="height: 100px; border-radius: 10px"
+        src="{{ data.images }}"
+        alt="..."
+      />
+      <!-- details-->
+      <div class="detail">
+        <h4>{{ data.title }}</h4>
+        <p>PKR: {{ data.price }}</p>
+        <input style="width: 40px; height: 22px" type="number" id="quantity" name="quantity" min="1" [defaultValue]="1">
+      </div>
+      <!-- <Button class="btn" routerLink="/cart">ADD TO CART</Button> -->
+      <!-- </div> -->
+    </div>
+  </div>
+
+  <div class="item2">
+    <div class="col2">
+        <h3>Order Summury</h3>
+
+        <div class="row">
+            <p>Items</p>
+            <h4>10</h4>
+        </div>
+        <div class="row">
+            <p>Subtotal</p>
+            <h4>PKR 2000</h4>
+        </div>
+        <div class="row">
+            <p>Shipping</p>
+            <h4>Free</h4>
+        </div>
+        <div class="row">
+            <p>Total</p>
+            <h4>PKR 2000</h4>
+        </div>
+
+        <button class="btn">Checkout</button>
+    </div>
+  </div>
+</div>

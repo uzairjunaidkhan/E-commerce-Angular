@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop';
+
+  isShow = false;
+  value:String="";
+  toggleDivs() {
+    this.isShow = !this.isShow;
+  }
+  change(){
+    console.log(this.value)
+  }
 }

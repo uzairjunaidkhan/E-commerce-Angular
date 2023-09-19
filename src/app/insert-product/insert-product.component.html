@@ -1,0 +1,85 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <div class="row">
+      <h1>Insert Product</h1>
+    </div>
+
+    <div class="row">
+      <div class="m">
+        <p>Name</p>
+        <input [(ngModel)]="email" type="text" name="email" />
+      </div>
+      <div class="m">
+        <p>Description</p>
+        <textarea name="description" id="" cols="30" rows="1"></textarea>
+        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
+      </div>
+      <div class="m">
+        <p>RichDescription</p>
+        <textarea name="richDescription" id="" cols="30" rows="1"></textarea>
+      </div>
+      <div class="m">
+        <p>Image</p>
+        <input [(ngModel)]="email" type="file" name="email" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="m">
+        <p>Brand</p>
+        <select name="brand" id="category">
+          <option value="male">male</option>
+          <option value="female">female</option>
+        </select>
+      </div>
+      <div class="m">
+        <p>Price</p>
+        <input type="number" name="email" />
+      </div>
+      <div class="m">
+        <p>Category</p>
+        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
+        <select name="category" id="category">
+          <option value="volvo">t-shirt</option>
+          <option value="volvo">Volvo</option>
+          <option value="volvo">Volvo</option>
+        </select>
+      </div>
+      <div class="m">
+        <p>CountInStock</p>
+        <input type="number" name="email" />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="m">
+        <p>rating</p>
+        <input type="number" name="rating" />
+      </div>
+      <div class="m">
+        <p>isFeatured</p>
+        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
+        <select name="isFeatured" id="category">
+          <option value="false">No</option>
+          <option value="true">Yes</option>
+        </select>
+      </div>
+      <div class="m">
+        <p style="visibility: hidden;">.</p> 
+        <button class="btn" type="submit">Insert</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- name
+description
+//richDescription 
+//image
+//images
+//brand
+price
+category
+countInStock
+rating
+//isFeatured -->

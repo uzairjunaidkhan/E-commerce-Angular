@@ -1,0 +1,22 @@
+<div class="container">
+  <form (ngSubmit)="onSubmit()">
+    <h1>Welcome back</h1>
+    
+    <!-- <div class="mail"> -->
+      <p> Email </p>
+      <input [(ngModel)]="email" type="text" name="email" />
+    <!-- </div> -->
+
+    <!-- <div class="pass"> -->
+      <p for="address"> Password </p>
+      <input [(ngModel)]="password" type="password" name="password" />
+    <!-- </div> -->
+
+    <!-- <div class="row"> -->
+        <p>Forget password</p>
+    <!-- </div> -->
+    <button class="btn" type="submit">Login</button>
+
+    <p>Don't have an account? <b routerLink="/register"> SignUp </b></p>
+  </form>
+</div>
