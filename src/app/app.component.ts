@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'shop';
+  constructor(public _auth: AuthService) {}
+
+  logOut(){
+    this._auth.loggedOut();
+  }
 
   isShow = false;
   value:String="";
+
   toggleDivs() {
     this.isShow = !this.isShow;
   }
   change(){
     console.log(this.value)
   }
+  
 }

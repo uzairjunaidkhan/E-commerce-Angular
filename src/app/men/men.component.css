@@ -19,7 +19,6 @@
     align-items: center;
 }
 
-
 .nav-bar-2 ul li a{
     display: flex;
     justify-content: start;
@@ -42,7 +41,7 @@
     background-color: whitesmoke;
     min-width: 160px;
     z-index: 1;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .dropdown-content a {
     color: black;

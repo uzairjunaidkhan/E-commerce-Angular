@@ -49,7 +49,8 @@
     <input placeholder="Search" [(ngModel)]="value" (change)="change()" type="text" id="search" name="search" size="20">
   </div>
   <div class="login">
-    <a routerLink="login">Login</a>
+    <a *ngIf="!_auth.loggedIn()" routerLink="login">Login</a>
+    <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor:pointer">Logout</a>
     <!-- <a routerLink="register">Logout</a> -->
   </div>
 

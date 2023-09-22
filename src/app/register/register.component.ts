@@ -1,29 +1,46 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
+  registerData: {
+    username: String;
+    email: String;
+    password: String;
+    phone: Number;
+    street: String;
+    apartment: String;
+    zip: String;
+    city: String;
+    country: String;
+  } = {
+    username: '',
+    email: '',
+    password: '',
+    phone: 91,
+    street: '',
+    apartment: '',
+    zip: '',
+    city: '',
+    country: '',
+  };
 
-  username:String="";
-  email:String="";
-  password:String="";
-  phone:Number=91;
-  street:String="";
-  apartment:String="";
-  zip:String="";
-  city:String="";
-  country:String="";
+  constructor(private auth: AuthService, private router: Router) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  onSubmit() {
+    this.auth.registerUser(this.registerData).subscribe(
+      (res) => {
+        console.log(res);
+        this.router.navigate(['/login'])
+      },
+      (err) => console.log(err)
+    );
   }
-
-  onSubmit(){
-    console.log(this.email, this.password)
-  }
-
 }

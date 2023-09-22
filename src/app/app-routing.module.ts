@@ -12,6 +12,8 @@ import { RegisterComponent } from './register/register.component';
 import { AdminComponent } from './admin/admin.component';
 import { InsertProductComponent } from './insert-product/insert-product.component';
 import { InsertCategoryComponent } from './insert-category/insert-category.component';
+import { AuthGuard } from './auth.guard';
+import { RoleGuard } from './role.guard';
 
 const routes: Routes = [
 
@@ -20,10 +22,10 @@ const routes: Routes = [
   { path: 'men', component: MenComponent },
   { path: 'women', component: WomenComponent },
   { path: 'detail/:id', component: ProductdetailComponent },
-  { path: 'cart', component: CartComponent },
+  { path: 'cart', component: CartComponent, canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent, canActivate:[RoleGuard]},
   { path: 'insert-product', component: InsertProductComponent },
   { path: 'insert-category', component: InsertCategoryComponent },
   { path: '**', component: PageNotFounndComponent }
