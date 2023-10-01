@@ -14,6 +14,10 @@ import { InsertProductComponent } from './insert-product/insert-product.componen
 import { InsertCategoryComponent } from './insert-category/insert-category.component';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
+import { AllProductComponent } from './all-product/all-product.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
+import { AllCategoryComponent } from './all-category/all-category.component';
+import { UpdateCategoryComponent } from './update-category/update-category.component';
 
 const routes: Routes = [
 
@@ -27,7 +31,11 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent, canActivate:[RoleGuard]},
   { path: 'insert-product', component: InsertProductComponent },
+  { path: 'all-product', component: AllProductComponent },
+  { path: 'update-product/:id', component: UpdateProductComponent },
   { path: 'insert-category', component: InsertCategoryComponent },
+  { path: 'all-category', component: AllCategoryComponent },
+  { path: 'update-category/:id', component: UpdateCategoryComponent },
   { path: '**', component: PageNotFounndComponent }
 ];
 

@@ -22,6 +22,10 @@ import { ProductService } from './product.service';
 import { AuthGuard } from './auth.guard';
 import { RoleGuard } from './role.guard';
 import { TokenInterceptInterceptor } from './token-intercept.interceptor';
+import { AllProductComponent } from './all-product/all-product.component';
+import { AllCategoryComponent } from './all-category/all-category.component';
+import { UpdateCategoryComponent } from './update-category/update-category.component';
+import { UpdateProductComponent } from './update-product/update-product.component';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { TokenInterceptInterceptor } from './token-intercept.interceptor';
     RegisterComponent,
     AdminComponent,
     InsertProductComponent,
-    InsertCategoryComponent
+    InsertCategoryComponent,
+    AllProductComponent,
+    AllCategoryComponent,
+    UpdateCategoryComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,22 @@
     list-style: none;
     text-decoration: none;
 }
+.container1{
+    margin: 10px 10px 0px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.item{
+    flex: auto;
+    padding: 10px;
+    background-color: whitesmoke;
+    height: 120px;
+    min-width: 125px;
+    border-radius: 10px;
+}
+
 .container{
     /* margin: 10px; */
     display: grid;
@@ -33,7 +49,7 @@
 .item1{
     background-color: rgb(189,242,210);
     height: 120px;
-    border-radius: 20px;
+    border-radius: 10px;
     /* min-width: 160px; */
     grid-column-start: 1;
     grid-column-end: 3;
@@ -41,7 +57,7 @@
 .item2{
     background-color: rgb(255,235,157);
     height: 120px;
-    border-radius: 20px;
+    border-radius: 10px;
     /* min-width: 160px; */
     grid-column-start: 1;
     grid-column-end: 3;
@@ -49,32 +65,32 @@
 .item3{
     background-color: rgb(255,235,157);
     height: 170px;
-    border-radius: 20px;
+    border-radius: 10px;
     min-width: 160px;
 }
 .item4{
     background-color: brown;
     height: 170px;
-    border-radius: 20px;
+    border-radius: 10px;
     min-width: 160px;
 }
 /* ////// */
 .item5{
     background-color: brown;
     height: 300px;
-    border-radius: 20px;
+    border-radius: 10px;
     min-width: 160px;
 }
 .item6{
     background-color: rgb(255,235,157);
     height: 300px;
-    border-radius: 20px;
+    border-radius: 10px;
     min-width: 160px;
 }
 .item7{
     background-color: rgb(255,235,157);
     height: 120px;
-    border-radius: 20px;
+    border-radius: 10px;
     /* min-width: 160px; */
     grid-column-start: 1;
     grid-column-end: 3;

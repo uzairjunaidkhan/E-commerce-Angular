@@ -7,59 +7,55 @@
     <div class="row">
       <div class="m">
         <p>Name</p>
-        <input [(ngModel)]="email" type="text" name="email" />
+        <input [(ngModel)]="productData.name" type="text" name="name" />
       </div>
       <div class="m">
         <p>Description</p>
-        <textarea name="description" id="" cols="30" rows="1"></textarea>
-        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
+        <textarea [(ngModel)]="productData.description" name="description" id="description" cols="30" rows="1"></textarea>
       </div>
       <div class="m">
         <p>RichDescription</p>
-        <textarea name="richDescription" id="" cols="30" rows="1"></textarea>
+        <textarea [(ngModel)]="productData.richDescription" name="richDescription" id="richDescription" cols="30" rows="1"></textarea>
       </div>
       <div class="m">
         <p>Image</p>
-        <input [(ngModel)]="email" type="file" name="email" />
+        <!-- <input [(ngModel)]="productData.image" type="file" accept="image/*" name="Image" /> -->
+        <input (change)="onChangefile($event)" type="file" accept="image/*" name="Image" />
       </div>
     </div>
 
     <div class="row">
       <div class="m">
         <p>Brand</p>
-        <select name="brand" id="category">
+        <select [(ngModel)]="productData.brand" name="brand" id="brand">
           <option value="male">male</option>
           <option value="female">female</option>
         </select>
       </div>
       <div class="m">
         <p>Price</p>
-        <input type="number" name="email" />
+        <input [(ngModel)]="productData.price" type="number" name="price" />
       </div>
       <div class="m">
         <p>Category</p>
-        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
-        <select name="category" id="category">
-          <option value="volvo">t-shirt</option>
-          <option value="volvo">Volvo</option>
-          <option value="volvo">Volvo</option>
+        <select [(ngModel)]="productData.category" name="category" id="category">
+          <option *ngFor="let category of categoryList"  value="{{category.id}}">{{category.name}}</option>
         </select>
       </div>
       <div class="m">
         <p>CountInStock</p>
-        <input type="number" name="email" />
+        <input [(ngModel)]="productData.countInStock" type="number" name="CountInStock" min="1"/>
       </div>
     </div>
 
     <div class="row">
       <div class="m">
         <p>rating</p>
-        <input type="number" name="rating" />
+        <input [(ngModel)]="productData.rating" type="number" name="rating" min="1" max="5"/>
       </div>
       <div class="m">
         <p>isFeatured</p>
-        <!-- <input [(ngModel)]="email" type="text" name="email" /> -->
-        <select name="isFeatured" id="category">
+        <select [(ngModel)]="productData.isFeatured" name="isFeatured" id="isFeatured">
           <option value="false">No</option>
           <option value="true">Yes</option>
         </select>
@@ -74,12 +70,12 @@
 
 <!-- name
 description
-//richDescription 
-//image
-//images
-//brand
+richDescription 
+image
+images
+brand
 price
 category
 countInStock
 rating
-//isFeatured -->
+isFeatured -->
