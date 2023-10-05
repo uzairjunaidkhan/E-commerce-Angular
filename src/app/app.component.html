@@ -2,13 +2,18 @@
   <h5>SHOP NEW ARRIVALS</h5>
 </div>
 <div class="header">
-  <h1 routerLink="" style="cursor: pointer; font-family: Verdana, Geneva, Tahoma, sans-serif;">FUSION &reg;</h1>
+  <h1
+    routerLink=""
+    style="cursor: pointer; font-family: Verdana, Geneva, Tahoma, sans-serif"
+  >
+    FUSION &reg;
+  </h1>
 
-  <nav class="nav-bar" [ngClass]="{'active': isShow}">
+  <nav class="nav-bar" [ngClass]="{ active: isShow }">
     <ul>
       <li>
         <div class="dropdown">
-          <a class="dropbtn" routerLink="men" >Men</a>
+          <a class="dropbtn" routerLink="men">Men</a>
           <div class="dropdown-content">
             <p routerLink="women">All</p>
             <p routerLink="women">Shirt</p>
@@ -32,10 +37,10 @@
         <div class="dropdown">
           <a class="dropbtn" routerLink="about">About</a>
           <div class="dropdown-content">
-            <p routerLink="women">Contact</p>
-            <p routerLink="women">About us</p>
-            <p routerLink="women">Privacy policy</p>
-            <p routerLink="women">Terms & conditions</p>
+            <p routerLink="/about" fragment="section2">About us</p>
+            <p routerLink="/about" fragment="section3">Privacy policy</p>
+            <p routerLink="/about" fragment="section4">Terms & conditions</p>
+            <p routerLink="/about" fragment="section5">Contact</p>
           </div>
         </div>
       </li>
@@ -46,26 +51,99 @@
   </nav>
 
   <div class="search">
-    <input placeholder="Search" [(ngModel)]="value" (change)="change()" type="text" id="search" name="search" size="20">
+    <input
+      placeholder="Search"
+      [(ngModel)]="value"
+      (change)="change()"
+      type="text"
+      id="search"
+      name="search"
+      size="20"
+    />
   </div>
   <div class="login">
     <a *ngIf="!_auth.loggedIn()" routerLink="login">Login</a>
-    <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor:pointer">Logout</a>
-    <!-- <a routerLink="register">Logout</a> -->
+    <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor: pointer"
+      >Logout</a
+    >
   </div>
 
-  <div class="hamburger" (click)="toggleDivs()"> 
+  <div class="hamburger" (click)="toggleDivs()">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
   </div>
-
 </div>
 
 <div class="main">
   <router-outlet></router-outlet>
 </div>
 
-<div class="footer">
+<!-- <div class="footer">
   <h5>© 2020. All rights reserved. Made by Uzair Junaid</h5>
+</div> -->
+
+<!-- FOOTER START -->
+<div class="footer">
+  <div class="contain">
+    <div class="col">
+      <h1>Company</h1>
+      <ul>
+        <li>About</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+        <li>Get in touch</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Products</h1>
+      <ul>
+        <li>About</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+        <li>Get in touch</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Accounts</h1>
+      <ul>
+        <li>About</li>
+        <li>Mission</li>
+        <li>Services</li>
+        <li>Social</li>
+        <li>Get in touch</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Resources</h1>
+      <ul>
+        <li>Webmail</li>
+        <li>Redeem code</li>
+        <li>WHOIS lookup</li>
+        <li>Site map</li>
+        <li>Web templates</li>
+        <li>Email templates</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h1>Support</h1>
+      <ul>
+        <li>Contact us</li>
+        <li>Web chat</li>
+        <li>Open ticket</li>
+      </ul>
+    </div>
+    <!-- <div class="col social">
+      <h1>Social</h1>
+      <ul>
+        <li><img src="https://svgshare.com/i/5fq.svg" width="32" style="width: 32px;"></li>
+        <li><img src="https://svgshare.com/i/5eA.svg" width="32" style="width: 32px;"></li>
+        <li><img src="https://svgshare.com/i/5f_.svg" width="32" style="width: 32px;"></li>
+      </ul>
+    </div> -->
+    <div class="clearfix"></div>
+  </div>
 </div>
+<!-- END OF FOOTER -->

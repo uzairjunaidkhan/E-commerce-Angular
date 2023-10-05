@@ -44,18 +44,10 @@ export class UpdateProductComponent implements OnInit {
     );
   }
 
-  // imageUpdate(event:any){
-  //   this.productData.image = event.target.value;
-  //   console.log(event)
-  // }
-
   onSubmit() {
-    // this.imageUpdate(event);
-    alert('Product Updated')
-    console.log(this.productData)
     this.proService.editProduct(this.id, this.productData).subscribe(
       (res) => {
-        console.log(res);
+        // console.log(res);
         alert('Product Updated')
       },
       (err) => {

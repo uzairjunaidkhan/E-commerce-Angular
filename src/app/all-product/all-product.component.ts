@@ -21,14 +21,12 @@ export class AllProductComponent implements OnInit {
     )
   }
 
-  onEdit(id){
-    alert(id)
-  }
   onDelete(id){
     this.proService.delProduct(id).subscribe(
       (res:any) =>{
         alert(res.message);
         // console.log(res)
+        this.ngOnInit()
       },
       err => console.log(err)
     )

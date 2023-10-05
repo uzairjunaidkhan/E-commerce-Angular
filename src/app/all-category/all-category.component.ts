@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-all-category',
@@ -7,9 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllCategoryComponent implements OnInit {
 
-  constructor() { }
+  category:any;
+  constructor(private proService: ProductService,) { }
 
   ngOnInit(): void {
+    this.proService.getCategory().subscribe(
+      res => {
+        this.category = res;
+        console.log(this.category);
+      },
+      err => console.log(err)
+    )
+  }
+
+
+  onDelete(id){
+    this.proService.delCategory(id).subscribe(
+      (res:any) =>{
+        alert(res.message);
+        // console.log(res)
+        this.ngOnInit()
+      },
+      err => console.log(err)
+    )
   }
 
 }

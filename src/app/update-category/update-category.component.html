@@ -1,1 +1,17 @@
-<p>update-category works!</p>
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+      <h1>Update Category</h1>
+  
+      <p>Name *</p>
+      <input [(ngModel)]="category.name" type="text" name="email" />
+  
+      <p>Description</p>
+      <textarea [(ngModel)]="category.icon" name="description" id="description" cols="30" rows="1"></textarea>
+  
+      <p></p>
+  
+      <button class="btn" type="submit">Update</button>
+  
+    </form>
+  </div>
+  

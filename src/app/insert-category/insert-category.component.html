@@ -3,10 +3,10 @@
     <h1>Insert Category</h1>
 
     <p>Name *</p>
-    <input [(ngModel)]="email" type="text" name="email" />
+    <input [(ngModel)]="category.name" type="text" name="email" />
 
-    <p>Icon (optional)</p>
-    <input [(ngModel)]="password" type="file" name="password" />
+    <p>Description</p>
+    <textarea [(ngModel)]="category.icon" name="description" id="description" cols="30" rows="1"></textarea>
 
     <p></p>
 
