@@ -40,6 +40,14 @@ export class AuthService {
     const role:boolean = decoToken.isAdmin;
     return role;  
   }
+
+  getUserId(){
+    const JwtHelper = new JwtHelperService();
+    const token = this.getToken();
+    const decoToken = JwtHelper.decodeToken(token);
+    const userId = decoToken.userId;
+    return userId;  
+  }
 }
 
 

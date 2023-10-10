@@ -37,13 +37,18 @@
           <p>Price</p>
           <input [(ngModel)]="productData.price" type="number" name="price"/>
         </div>  
-        <div class="m">
+        <!-- <div class="m">
           <p>Category</p>
           <input [(ngModel)]="productData.category.name" name="category" id="category"/>
-          <!-- <select [(ngModel)]="productData.category.name" name="category" id="category">
-            <option *ngFor="let category of categoryList"  value="{{category.id}}">{{category.name}}</option>
-          </select> -->
+        </div> -->
+        <div class="m">
+          <p>Category</p>
+          <select name="category" id="category" (change)="onCategoryChange($event)">
+            <option disabled selected>{{ productData.category.name }}</option>
+            <option *ngFor="let category of categoryList" [value]="category.id">{{ category.name }}</option>
+          </select>
         </div>
+
         <div class="m">
           <p>CountInStock</p>
           <input [(ngModel)]="productData.countInStock" type="number" name="CountInStock" min="1"/>

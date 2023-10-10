@@ -26,6 +26,10 @@ import { AllProductComponent } from './all-product/all-product.component';
 import { AllCategoryComponent } from './all-category/all-category.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
+import { AllUserComponent } from './all-user/all-user.component';
+import { AllOrderComponent } from './all-order/all-order.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 @NgModule({
@@ -46,7 +50,11 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     AllProductComponent,
     AllCategoryComponent,
     UpdateCategoryComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    AllUserComponent,
+    AllOrderComponent,
+    UpdateOrderComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

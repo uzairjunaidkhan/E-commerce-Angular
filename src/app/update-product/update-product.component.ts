@@ -27,7 +27,7 @@ export class UpdateProductComponent implements OnInit {
     isFeatured: Boolean;
   } 
 
-  constructor(private http: HttpClient, private proService: ProductService, private route:ActivatedRoute) {}
+  constructor(private proService: ProductService, private route:ActivatedRoute) {}
 
   ngOnInit(): void {
     this.id=this.route.snapshot.params['id'];
@@ -42,6 +42,20 @@ export class UpdateProductComponent implements OnInit {
         console.log(err);
       }
     );
+
+    this.proService.getCategory().subscribe(
+      res => {
+        this.categoryList = res;
+        console.log(this.categoryList);
+      },
+      err => console.log(err)
+    )
+  }
+
+  // custom event biding
+  onCategoryChange(event: any){
+    this.productData.category= event.target.value;
+    // console.log(this.productData.category);
   }
 
   onSubmit() {

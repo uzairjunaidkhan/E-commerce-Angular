@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class ProductService {
   private getOrdById = 'http://localhost:5000/api/order/';
   private deleteOrder = 'http://localhost:5000/api/order/delete/';
   private updateOrder = 'http://localhost:5000/api/order/update/';
-  private insertOrder = 'http://localhost:5000/api/category/create';
+  private insertOrder = 'http://localhost:5000/api/order/create';
   private order = "http://localhost:5000/api/order/list"
   private userOrder = 'http://localhost:5000/api/order/get/userorder/:id';
   private totalSale = 'http://localhost:5000/api/order/get/totalsales';
@@ -107,5 +108,14 @@ export class ProductService {
     return this.http.get(this.totalSale)
   }
 
+  //Cart
+  cart:any[] = [];
+  //Search
+  private searchQuerySubject = new BehaviorSubject<string>('');
+  searchQuery$ = this.searchQuerySubject.asObservable();
+
+  setSearchQuery(query: string) {
+    this.searchQuerySubject.next(query);
+  }
 
 }

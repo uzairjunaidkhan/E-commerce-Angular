@@ -10,8 +10,14 @@ export class MenComponent implements OnInit {
 
   rowData3:any;
   constructor(private proService: ProductService) { }
-
+  search: String = '';  
+  
   ngOnInit(): void {
+    this.proService.searchQuery$.subscribe(query => {
+      this.search = query;
+      // Perform search logic here with the updated query
+    });
+
     this.proService.getProduct().subscribe(
       res => 
       {

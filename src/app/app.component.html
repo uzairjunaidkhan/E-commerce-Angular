@@ -6,36 +6,25 @@
     routerLink=""
     style="cursor: pointer; font-family: Verdana, Geneva, Tahoma, sans-serif"
   >
-    FUSION &reg;
+    FUSION
+    <!-- &reg; -->
   </h1>
 
   <nav class="nav-bar" [ngClass]="{ active: isShow }">
     <ul>
       <li>
         <div class="dropdown">
-          <a class="dropbtn" routerLink="men">Men</a>
+          <a class="dropbtn" routerLink="shop">Shop</a>
           <div class="dropdown-content">
-            <p routerLink="women">All</p>
-            <p routerLink="women">Shirt</p>
-            <p routerLink="women">Short</p>
-            <p routerLink="women">Trouser</p>
+            <p routerLink="shop">All</p>
+            <p routerLink="shop">Men</p>
+            <p routerLink="shop">Women</p>
           </div>
         </div>
       </li>
       <li>
         <div class="dropdown">
-          <a class="dropbtn" routerLink="women">Women</a>
-          <div class="dropdown-content">
-            <p routerLink="women">All</p>
-            <p routerLink="women">T-Shirt</p>
-            <p routerLink="women">Shirt</p>
-            <p routerLink="women">Trouser</p>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="dropdown">
-          <a class="dropbtn" routerLink="about">About</a>
+          <a class="dropbtn" routerLink="/about">About</a>
           <div class="dropdown-content">
             <p routerLink="/about" fragment="section2">About us</p>
             <p routerLink="/about" fragment="section3">Privacy policy</p>
@@ -47,14 +36,21 @@
       <li>
         <a routerLink="cart">Cart</a>
       </li>
+      <!-- <li>
+        <div class="login">
+          <a *ngIf="!_auth.loggedIn()" routerLink="login">Login</a>
+          <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor: pointer">Logout</a>
+        </div>
+      </li> -->
     </ul>
   </nav>
 
   <div class="search">
     <input
       placeholder="Search"
-      [(ngModel)]="value"
-      (change)="change()"
+      [(ngModel)]="searchQuery"
+      (keyup)="change()"
+      routerLink="/shop"
       type="text"
       id="search"
       name="search"
@@ -63,9 +59,7 @@
   </div>
   <div class="login">
     <a *ngIf="!_auth.loggedIn()" routerLink="login">Login</a>
-    <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor: pointer"
-      >Logout</a
-    >
+    <a *ngIf="_auth.loggedIn()" (click)="logOut()" style="cursor: pointer">Logout</a>
   </div>
 
   <div class="hamburger" (click)="toggleDivs()">

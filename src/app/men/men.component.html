@@ -15,29 +15,35 @@
     </li>
   </ul>
 </nav>
-<p>women works!</p>
 
 <div class="container">
   <div class="col" *ngFor="let data of rowData3; let i = index">
-    <div class="item1" [routerLink]="['/detail/' + data.id]">
-      
-      <!-- <div [routerLink]="['detail/' + data.name.common]"> -->
-        <!-- image--> 
-        <img style="height: 200px; border-radius: 10px;" src="{{ data.image }}" alt="..." />
-        <!-- details-->
-        <div style="padding: 5px;">
-          <h5>{{ data.name }}</h5>
-          <p>{{ data.price }}</p>
+    <div *ngIf="search === '' || data.name.toLowerCase().includes(search)">
+      <div class="item1" [routerLink]="['/detail/' + data.id]">
+        <!-- image-->
+        <div style="position: relative">
+          <img
+            style="height: 220px; border-radius: 10px"
+            src="{{ data.image }}"
+            alt="..."
+          />
+          <p id="price">RS {{ data.price }}</p>
         </div>
-        <!-- <Button class="btn" routerLink="/cart">ADD TO CART</Button> -->
-      <!-- </div> -->
 
+        <!-- details-->
+        <div>
+          <h4>{{ data.name }}</h4>
+          <p
+            style="
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            "
+          >
+            {{ data.description }}
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
-
-<p>
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex error quis nisi,
-  odit ipsam in rem! A, perspiciatis. Iure labore sint suscipit laboriosam
-  explicabo ullam, quasi corporis iusto maxime exercitationem?
-</p>

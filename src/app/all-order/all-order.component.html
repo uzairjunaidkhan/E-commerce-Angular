@@ -1,0 +1,36 @@
+<div class="bac">
+    <h3>All Order</h3>
+    <!-- <button class="btn" routerLink="/insert-product" type="submit">Insert</button> -->
+  </div>
+  
+  <div class="container">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>USER NAME</th>
+        <th>USER ID</th>
+        <th>COUNTRY</th>
+        <th>CITY</th>
+        <th>ADDRESS</th>
+        <th>NO ORDER</th>
+        <th>DATE</th>
+        <th>STATUS</th>
+        <th>ACTION</th>
+      </tr>
+  
+      <tr *ngFor="let list of order">
+        <td>{{ list.id }}</td>
+        <td>{{ list.user.username }}</td>
+        <td>{{ list.user.id }}</td>
+        <td>{{ list.country }}</td>
+        <td>{{ list.city }}</td>
+        <td>{{ list.shippingAddress1 }}</td>
+        <td>{{ list.orderItems.length }}</td>
+        <td>{{ list.orderDate }}</td>
+        <td>{{ list.status }}</td>
+        <td class="td-btn" [routerLink]="['/update-order/' + list.id]">View</td>
+        <td class="td-btn" (click)="onDelete(list.id)">Dalete</td>
+      </tr>
+    </table>
+  </div>
+  

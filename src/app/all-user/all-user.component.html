@@ -1,0 +1,35 @@
+<div class="bac">
+  <h3>All User</h3>
+  <!-- <button class="btn" routerLink="/insert-product" type="submit">Insert</button> -->
+</div>
+
+<div class="container">
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>NAME</th>
+      <th>PHONE</th>
+      <th>EMAIL</th>
+      <th>COUNTRY</th>
+      <th>CITY</th>
+      <th>STREET</th>
+      <th>APARTMENT</th>
+      <th>ADMIN</th>
+      <th>ACTION</th>
+    </tr>
+
+    <tr *ngFor="let list of user">
+      <td>{{ list.id }}</td>
+      <td>{{ list.username }}</td>
+      <td>{{ list.phone }}</td>
+      <td>{{ list.email }}</td>
+      <td>{{ list.country }}</td>
+      <td>{{ list.city }}</td>
+      <td>{{ list.street }}</td>
+      <td>{{ list.apartment }}</td>
+      <td>{{ list.isAdmin }}</td>
+      <td class="td-btn" [routerLink]="['/update-user/' + list.id]">Edit</td>
+      <td class="td-btn" (click)="onDelete(list.id)">Dalete</td>
+    </tr>
+  </table>
+</div>

@@ -1,13 +1,21 @@
-<p>home works!</p>
 <div class="container">
   <div class="item1">
-
+    <div style="position: absolute; top: 30%; left: 5%;">
+      <p>Men's Collection</p>
+      <h1>NEW <br> SEASON</h1>
+      <button class="btn" routerLink="/shop">Shop Now</button>
+    </div>
+    <img style="height: 100%; width: 100%; object-fit: cover; border-radius: 10px;" 
+    src="../../assets/landing1.jpg" alt="">
   </div>
   <div class="item2" >
     <img style="height: 100%; width: 100%; object-fit: cover; border-radius: 10px;" 
-        src="../../assets/omar-prestwich-jLEGurepDco-unsplash.jpg" alt="">
+        src="../../assets/landing3.jpg" alt="">
   </div>
-  <div class="item3"></div>
+  <div class="item3">
+    <img style="height: 100%; width: 100%; object-fit: cover; border-radius: 10px;" 
+        src="../../assets/x0K3SKA.jpeg" alt="">
+  </div>
 </div>
 
 <div class="center">
@@ -17,12 +25,12 @@
   <div class="col1" *ngFor="let data of rowData3; let i = index">
     <img
       style="height: 200px; border-radius: 10px"
-      src="{{ data.images }}"
+      src="{{ data.image }}"
       alt="..."
     />
     <!-- details -->
     <!-- <div class="detail"> -->
-    <h4>{{ data.title }}</h4>
+    <h4>{{ data.name }}</h4>
     <p>PKR: {{ data.price }}</p>
     <!-- <input style="width: 40px; height: 22px" type="number" id="quantity" name="quantity" min="1" [defaultValue]="1"> -->
     <!-- </div> -->

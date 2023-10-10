@@ -18,24 +18,36 @@ import { AllProductComponent } from './all-product/all-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 import { AllCategoryComponent } from './all-category/all-category.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
+import { AllOrderComponent } from './all-order/all-order.component';
+import { UpdateOrderComponent } from './update-order/update-order.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { AllUserComponent } from './all-user/all-user.component';
 
 const routes: Routes = [
 
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'men', component: MenComponent },
+  { path: 'shop', component: MenComponent },
   { path: 'women', component: WomenComponent },
   { path: 'detail/:id', component: ProductdetailComponent },
   { path: 'cart', component: CartComponent, canActivate:[AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'admin', component: AdminComponent, canActivate:[RoleGuard]},
+  
   { path: 'insert-product', component: InsertProductComponent },
   { path: 'all-product', component: AllProductComponent },
   { path: 'update-product/:id', component: UpdateProductComponent },
+  
   { path: 'insert-category', component: InsertCategoryComponent },
   { path: 'all-category', component: AllCategoryComponent },
   { path: 'update-category/:id', component: UpdateCategoryComponent },
+  
+  { path: 'all-order', component: AllOrderComponent },
+  { path: 'update-order/:id', component: UpdateOrderComponent },
+  
+  { path: 'all-user', component: AllUserComponent },
+  { path: 'update-user/:id', component: UpdateUserComponent },
   { path: '**', component: PageNotFounndComponent }
 ];
 

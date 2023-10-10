@@ -18,10 +18,10 @@ export class HomeComponent implements OnInit {
   
   ngOnInit(){
 
-  this.http.get("https://fakestoreapi.com/products?limit=5").subscribe(
+  this.http.get("http://localhost:5000/api/product/get/featured/:5").subscribe(
     data => {
-      this.rowData2 = data;
-      this.rowData3 = this.rowData2;
+      this.rowData3 = data;
+      // this.rowData3 = this.rowData2;
       // console.log(this.rowData3);
     });
     

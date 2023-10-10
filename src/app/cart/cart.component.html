@@ -1,4 +1,3 @@
-<p>cart works!</p>
 <div class="container">
   <div class="item1">
     <div class="col1" *ngFor="let data of rowData3; let i = index">
@@ -6,27 +5,29 @@
       <!-- image-->
       <img
         style="height: 100px; border-radius: 10px"
-        src="{{ data.images }}"
+        src="{{ data.image }}"
         alt="..."
       />
       <!-- details-->
       <div class="detail">
-        <h4>{{ data.title }}</h4>
+        <h4>{{ data.name }}</h4>
         <p>PKR: {{ data.price }}</p>
-        <input style="width: 40px; height: 22px" type="number" id="quantity" name="quantity" min="1" [defaultValue]="1">
+        
+        <input [(ngModel)]="proQuantity[i]"  (ngModelChange)="onChange($event, i)" style="width: 40px; height: 22px" type="number" id="quantity" name="quantity" min="1" [defaultValue]="1">
+        <!-- value="{{proQuantity[i]}}" -->
       </div>
       <!-- <Button class="btn" routerLink="/cart">ADD TO CART</Button> -->
       <!-- </div> -->
     </div>
   </div>
 
-  <div class="item2">
+  <div class="item2" *ngIf="productID">
     <div class="col2">
         <h3>Order Summury</h3>
 
         <div class="row">
             <p>Items</p>
-            <h4>10</h4>
+            <h4>{{totalQuantity}}</h4>
         </div>
         <div class="row">
             <p>Subtotal</p>
@@ -41,7 +42,11 @@
             <h4>PKR 2000</h4>
         </div>
 
-        <button class="btn">Checkout</button>
+        <button (click)="onCheckOut()" class="btn">Checkout</button>
     </div>
+  </div>
+
+  <div class="center" *ngIf="!productID">
+    <h1>Cart Is Empty</h1>
   </div>
 </div>
